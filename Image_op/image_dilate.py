@@ -1,5 +1,5 @@
 """
-将二值形态图像进行膨胀
+将二值形态图像进行膨胀（单张或对多通道逐层单张）
 """
 from skimage import morphology
 
