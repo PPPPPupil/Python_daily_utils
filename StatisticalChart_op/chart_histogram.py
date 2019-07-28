@@ -4,7 +4,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-def draw_col(data, bins=10, density=0, facecolor="blue", edgecolor="black", alpha=0.7, xstep = 50, normed = 0, xlabel='区间', ylabel='频次', title='直方图'):
+def draw_hist(data, bins=10, density=0, facecolor="blue", edgecolor="black", alpha=0.7, xstep = 50, normed = 0, xlabel='区间', ylabel='频次', title='直方图'):
     """
     绘制data的直方图（横坐标为data所有数据的区间，纵坐标为该区间内data数据的频次）
     :param data: 被统计数据（data数据体现为X轴，Y轴为统计数自动生成）
