@@ -1,5 +1,10 @@
 """通过神经网络，为黑白图像上色（not just stack to RGB）"""
 """copyright: https://github.com/emilwallner/Coloring-greyscale-images"""
+"""
+需要从【https://github.com/fchollet/deep-learning-models/releases/download/v0.7/inception_resnet_v2_weights_tf_dim_ordering_tf_kernels.h5】下载预训练模型权重，
+并以名称【inception_resnet_v2_weights_tf_dim_ordering_tf_kernels.h5】放至pred_weights文件夹下
+（直接打开连接或将连接复制到迅雷下载器都可，有会员推荐迅雷）
+"""
 
 import keras
 from keras.applications.inception_resnet_v2 import InceptionResNetV2
