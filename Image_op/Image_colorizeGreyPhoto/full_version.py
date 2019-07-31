@@ -1,9 +1,14 @@
-"""通过神经网络，为黑白图像上色（not just stack to RGB）"""
-"""copyright: https://github.com/emilwallner/Coloring-greyscale-images"""
+"""[目标]：通过神经网络，为黑白图像上色（not just stack to RGB）"""
+
+"""[copyright]:
+    download from : https://github.com/emilwallner/Coloring-greyscale-images  
+    原论文：Deep Koalarization: Image Colorization using CNNs and Inception-ResNet-v2 (2017).
+    原论文github: https://github.com/baldassarreFe/deep-koalarization
+"""
 """
 需要从【https://github.com/fchollet/deep-learning-models/releases/download/v0.7/inception_resnet_v2_weights_tf_dim_ordering_tf_kernels.h5】下载预训练模型权重，
 并以名称【inception_resnet_v2_weights_tf_dim_ordering_tf_kernels.h5】放至pred_weights文件夹下
-（直接打开连接或将连接复制到迅雷下载器都可，有会员推荐迅雷）
+（直接打开链接或将链接复制到迅雷下载器都可，有会员推荐迅雷）
 """
 
 import keras
