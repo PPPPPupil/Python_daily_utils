@@ -33,4 +33,5 @@ def sort_by_figure(path, head=1, tail=-1):
     :return: 排序后的列表
     """
     file_list = os.listdir(path)
-    return file_list.sort(key=lambda x: int(x[head:tail]))
+    file_list.sort(key=lambda x: int(x[head:tail]))
+    return file_list
