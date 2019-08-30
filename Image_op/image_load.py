@@ -19,11 +19,13 @@ def load_image(filename, path):
 def load_dicom_image(filename,path):
     """
     加载path下dicom格式文件，并返回其图像的pixel数组（不包含个人信息）
+    note:此时读取出来的是像素值，而不是CT（HU）值
     :param filename: dicom图像文件名称
     :param path: dicom图像文件所在路径
     :return: dicom所包含的像素数组
     """
-    dicom_file = dcmread(os.path.join(path,filename))
+    # dicom_file = dcmread(os.path.join(path,filename))
+    dicom_file = pydicom.read_file(os.path.join(path, filename))  # 通过两种方式读入的dicom_file相同
     image_array = dicom_file.pixel_array
     return image_array
 

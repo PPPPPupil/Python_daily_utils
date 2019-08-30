@@ -1,3 +1,4 @@
+import os
 import dicom
 import numpy as np
 import SimpleITK as sitk
@@ -10,8 +11,10 @@ def pixel2hu(filename, path):
     :param path: CT图像文件所在路径
     :return: Hu值CT
     """
-    dcm_path = '图片路径'
-    img = dicom.read_file(dcm_path)
-    img_array = sitk.GetArrayFromImage(sitk.ReadImage(dcm_path))
-    HU = np.dot(img_array, img.RescaleSlope) + img.RescaleIntercept
-    return HU
+    dcm_path = os.path.join(path,filename)
+    dicom_file = dicom.read_file(dcm_path)
+    pixel_array = dicom_file.pixel_array
+    CT_array = np.dot(pixel_array, dicom_file.RescaleSlope) + dicom_file.RescaleIntercept
+    # img_array = sitk.GetArrayFromImage(sitk.ReadImage(dcm_path))
+
+    return CT_array
