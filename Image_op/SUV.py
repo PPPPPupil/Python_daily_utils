@@ -3,6 +3,7 @@ import numpy as np
 #编写dicom类
 class dicom_PT():
     """
+    PET dicom原始文件 转 SUV值
     example：
     PET = dicom_PT(casepath)
     voxel,_ = PET.cal_suv()
