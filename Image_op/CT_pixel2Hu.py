@@ -13,7 +13,7 @@ def pixel2hu(filename, path):
     """
     dcm_path = os.path.join(path,filename)
     dicom_file = dicom.read_file(dcm_path)
-    pixel_array = dicom_file.pixel_array
+    pixel_array = dicom_file.pixel_array  # 像素值
     CT_array = np.dot(pixel_array, dicom_file.RescaleSlope) + dicom_file.RescaleIntercept
     # img_array = sitk.GetArrayFromImage(sitk.ReadImage(dcm_path))
 
