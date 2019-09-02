@@ -5,6 +5,7 @@ import os
 import scipy
 import scipy.misc
 import pydicom
+import imageio
 from pydicom import dcmread
 def load_image(filename, path):
     """
@@ -14,6 +15,16 @@ def load_image(filename, path):
     :return: 图像数组
     """
     image_array = scipy.misc.imread(os.path.join(path, filename))
+    return image_array
+
+def load_hdr_image(filename,path):
+    """
+    hdr(高动态范围图像)通常以hdr或tif为后缀，需要通过imageio读取保证值不变，否则会压缩到0-255
+    :param filename:
+    :param path:
+    :return:
+    """
+    image_array = imageio.imread(os.path.join(path,filename))
     return image_array
 
 def load_dicom_image(filename,path):
