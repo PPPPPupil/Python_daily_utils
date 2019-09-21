@@ -23,6 +23,7 @@ def draw_hist(data, bins=10, density=0, facecolor="blue", edgecolor="black", alp
     mpl.rcParams['font.sans-serif'] = ['SimHei']  # 用黑体显示中文
     mpl.rcParams['axes.unicode_minus'] = False  # 正常显示负号
 
+    plt.figure(figsize=(32, 16))  # 设置画布大小
     plt.hist(data, bins=bins, density=density, facecolor=facecolor, edgecolor=edgecolor, alpha=alpha, normed=normed)
 
     # 设置横坐标间隔
@@ -31,6 +32,8 @@ def draw_hist(data, bins=10, density=0, facecolor="blue", edgecolor="black", alp
     plt.xlabel(xlabel)
     # 显示纵轴标签
     plt.ylabel(ylabel)
+    # 横坐标字号
+    plt.tick_params(labelsize=30)
     # 显示图标题
     plt.title(title)
     plt.show()
