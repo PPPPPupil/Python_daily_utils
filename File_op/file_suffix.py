@@ -36,10 +36,9 @@ def get_files_with_suffix_from_grandfatherPath(grandfather_path, suffix='.jpg'):
     father_list = os.listdir(grandfather_path)
     target_list_all = []
     for father_dir in father_list:
-        if os.path.isdir(os.path.join(grandfather_path,father_dir)):  # 判断是否为目录
-            target_list_tempt = get_files_with_suffix(os.path.join(grandfather_path,father_dir),suffix=suffix)
+        if os.path.isdir(os.path.join(grandfather_path, father_dir)):  # 判断father_dir是否为目录
+            target_list_tempt = get_files_with_suffix(os.path.join(grandfather_path, father_dir), suffix=suffix)
             target_list_all.extend(target_list_tempt)
         else:
-            print("The file named:[" +father_dir+ "] in the grandfather path ["+ grandfather_path+"]is not a dir")
+            print("The file named:[" + father_dir + "] in the grandfather path [" + grandfather_path + "]is not a dir")
     return target_list_all
-
