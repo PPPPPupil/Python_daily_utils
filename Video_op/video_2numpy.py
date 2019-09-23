@@ -6,8 +6,8 @@ import os
 def video2array(path, filename):
     """
     读入path下的filename 视频文件，将所有帧储存为numpy数组（帧数，高，宽，通道=3）
-    :param path:
-    :param filename:
+    :param path: 视频所在文件
+    :param filename: 视频文件全名
     :return:
     """
     video_array = []
