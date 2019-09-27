@@ -7,7 +7,7 @@ import SimpleITK as sitk
 def pixel2hu(filename, path):
     """
     将像素值转换为Hu（CT）值   常用于CT图像
-    :param filename: CT图像文件名称
+    :param filename: CT图像文件名称(dicom)
     :param path: CT图像文件所在路径
     :return: Hu值CT
     """

@@ -31,8 +31,8 @@ def CT_dicom2voxel(case_path, clip=False, minHu=-80, maxHu=300):
         if clip == True:
             Hu = np.clip(Hu, minHu, maxHu)
         Hu_voxel.append(Hu)
-        Hu_voxel = np.array(Hu_voxel)
-        return Hu_voxel
+    Hu_voxel = np.array(Hu_voxel)
+    return Hu_voxel
 
 
 def PET_dicom2voxel(case_path):
