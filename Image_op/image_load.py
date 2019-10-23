@@ -10,6 +10,7 @@ from pydicom import dcmread
 def load_image(filename, path):
     """
     加载path下filename图像, scipy.misc不会默认将灰度图转换为三通道图像，所以一直在用(tif、png、jpg、bmp)
+    sicpy1.2.0版本之后，scipy,misc存取图像的方式将被移除，可以使用imageio来替代
     :param filename: 图像文件名称
     :param path: 图像文件所在路径
     :return: 图像数组
