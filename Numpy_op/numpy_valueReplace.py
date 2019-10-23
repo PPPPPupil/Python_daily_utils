@@ -1,9 +1,10 @@
+"""替换数组中满足用户条件的元素值"""
 import numpy as np
 
 
 def setMin(arr, Tmin):
     """
-    使传入的arr数组最小值为0Tmin 方法13不改变原始arr，方法2改变原始数组，所以要基于copy执行
+    使传入的arr数组最小值为Tmin 方法1、3不改变原始arr，方法2改变原始数组，所以要基于copy执行
     arr:目标数组
     Tmin:目标数组的目标最小值（小于Tmin一律替换为Tmin）
     """
@@ -23,7 +24,7 @@ def setMin(arr, Tmin):
 
 def setMax(arr, Tmax):
     """
-    使传入的arr数组最大值为Tmax  方法13不改变原始arr，方法2改变原始数组，所以要基于copy执行
+    使传入的arr数组最大值为Tmax  方法1、3不改变原始arr，方法2改变原始数组，所以要基于copy执行
     arr:目标数组
     Tmax:目标数组的目标最大值（小于Tmax一律替换为Tmax）
     """
