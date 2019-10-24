@@ -1,5 +1,5 @@
 """
-对一组一维向量进行施密特正交化处理
+对一组一维向量进行施密特正交化处理与逆施密特正交处理的两种方法（逆施密特很鸡肋，必须已知原向量组才能返回原向量组，但是适用于替换gs_array_set某些向量之后的逆变换情况）
 """
 from sympy.matrices import Matrix, GramSchmidt
 import numpy as np
