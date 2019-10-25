@@ -89,6 +89,7 @@ def my_GramSchmidt(vlist, orthonormal=False):
     if orthonormal:
         for i in range(len(gs_out)):
             gs_out[i] = gs_out[i].normalized()
+    gs_out = np.array(gs_out)
     return gs_out
 
 
@@ -115,6 +116,7 @@ def my_inverseGramSchmidt(gs_list, vlist, orthonormal=False):
     if orthonormal:
         for i in range(len(z_out)):
             z_out[i] = z_out[i].normalized()
+    z_out = np.array(z_out)
     return z_out
 
 
