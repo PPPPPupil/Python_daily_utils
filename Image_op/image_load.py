@@ -6,6 +6,7 @@ import scipy
 import scipy.misc
 import pydicom
 import imageio
+import cv2
 from pydicom import dcmread
 def load_image(filename, path):
     """
@@ -26,6 +27,16 @@ def load_hdr_image(filename,path):
     :return:
     """
     image_array = imageio.imread(os.path.join(path,filename))
+    return image_array
+
+def load_cv2_image(filename,path):
+    """
+    cv2中有很多好用的图像处理方法，但cv2默认的读取rgb图像的结果为bgr（不知为何），所以使用cv2的时候最好还是使用cv2.imread
+    :param filename:
+    :param path:
+    :return:
+    """
+    image_array = cv2.imread(os.path.join(path,filename))
     return image_array
 
 def load_dicom_image(filename,path):
