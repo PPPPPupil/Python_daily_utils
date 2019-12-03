@@ -9,8 +9,8 @@ def load_txt(filepath="example.txt"):
     """
     list = []
     for line in open(filepath):
-        # temp_dice = line.split("str",1)[1]  #对每行内容，按照字符串str将本行分为两部分，取后半部分
-        list.append(line)
+        temp_line = line.split("\n",1)[0]  #每行内容按照字符串\n将本行分为两部分，取q前半部分（去掉结尾回车）
+        list.append(temp_line)
     return list
 
 def load_txt2(filepath="example.txt"):
@@ -19,8 +19,11 @@ def load_txt2(filepath="example.txt"):
     :param filepath: txt的全路径
     :return:
     """
+    list = []
     with open(filepath) as f:
         lines = f.readlines()
-        # temp_dice = line.split("str",1)[1]  #对每行内容，按照字符串str将本行分为两部分，取后半部分
-
-    return lines
+    # 每行内容按照字符串\n将本行分为两部分，取q前半部分（去掉结尾回车）
+    for line in lines:
+        temp_line = line.split("\n",1)[0]
+        list.append(temp_line)
+    return list
