@@ -11,16 +11,19 @@ def draw_plot(x_data, y_data, title):
     :param title: 柱状图title
     :return:
     """
-    # 柱状图，x：自定义的名称（数字或其它），y：该x变量的数值
-    fig, axes_lst = plt.subplots()  # 创建窗口以及子图
-    axes_lst.plot(x_data, y_data)
-    axes_lst.set_title(title)
+    # 折线图，x：自定义的名称（数字或其它），y：该x变量的数值
+    plt.figure(figsize=(15, 10)) # 画布大小
+    plt.plot(x_data, y_data)
+    plt.xlabel('this is x')
+    plt.ylabel('this is y')
+    plt.title(title)
     plt.show()
 
 def draw_Bar(x_data, y_data, title):
-    plt.figure(figsize=(15, 10))
+
     plt.bar(x_data, y_data, width=8, color="red")
     plt.xlabel("x")  # 设置X轴Y轴名称
     plt.ylabel("y")
+    plt.xticks(x_data)  # 加此命令可使x坐标位x_data,否则位range(len(x_data))
     plt.title(title)
     # plt.show()
