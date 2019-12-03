@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 
 
-def draw_bar(x_data, y_data, title):
+def draw_plot(x_data, y_data, title):
     """
     绘制柱状图（X与Y轴数据一一对应且需手动给出）
     :param x_data: X轴数据
@@ -16,3 +16,11 @@ def draw_bar(x_data, y_data, title):
     axes_lst.plot(x_data, y_data)
     axes_lst.set_title(title)
     plt.show()
+
+def draw_Bar(x_data, y_data, title):
+    plt.figure(figsize=(15, 10))
+    plt.bar(x_data, y_data, width=8, color="red")
+    plt.xlabel("x")  # 设置X轴Y轴名称
+    plt.ylabel("y")
+    plt.title(title)
+    # plt.show()
