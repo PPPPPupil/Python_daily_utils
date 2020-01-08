@@ -35,3 +35,5 @@ def sort_by_figure(path, head=1, tail=-1):
     file_list = os.listdir(path)
     file_list.sort(key=lambda x: int(x[head:tail]))
     return file_list
+
+# 若文件名中除数字部分，其它部分命名规则一致，则数字部分使用相同位数的命名原则，会使得排列更方便（eg. sample00013.dcm）
