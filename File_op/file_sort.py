@@ -31,6 +31,8 @@ def sort_by_figure(path, head=1, tail=-1):
     :param head: （正）文件名中，数字之前的无用字符个数（1代表去掉文件名中前一个字符）
     :param tail: （负）文件名中，数字之后的无用字符个数(包括“.后缀”)（-1代表去掉文件名中最后一个字符，若末尾不去掉字符，则[head：]）
     :return: 排序后的列表
+
+    *注意  list.sort就好，若list = list.sort,会返回None
     """
     file_list = os.listdir(path)
     file_list.sort(key=lambda x: int(x[head:tail]))
