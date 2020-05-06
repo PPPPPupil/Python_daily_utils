@@ -28,13 +28,12 @@ def sort_by_figure(path, head=1, tail=-1):
     """
     按照文件名中的数字对文件列表进行排序（要求被排序文件符合相同规则的命名）
     :param path: 文件所在目录
-    :param head: （正）文件名中，数字之前的无用字符个数（1代表去掉文件名中前一个字符，空白代表不去掉）
-    :param tail: （负）文件名中，数字之后的无用字符个数(包括“.后缀”)（-1代表去掉文件名中最后一个字符,-2同理，空白代表不去掉）
+    :param head: （正）文件名中，数字之前的无用字符个数（1代表去掉文件名中前一个字符）
+    :param tail: （负）文件名中，数字之后的无用字符个数(包括“.后缀”)（-1代表去掉文件名中最后一个字符，若末尾不去掉字符，则[head：]）
     :return: 排序后的列表
-
-
-    *注意  head tail包含在去掉的字符中，且list.sort就好，list = list.sort会导致返回None
     """
     file_list = os.listdir(path)
     file_list.sort(key=lambda x: int(x[head:tail]))
     return file_list
+
+# 若文件名中除数字部分，其它部分命名规则一致，则数字部分使用相同位数的命名原则，会使得排列更方便（eg. sample00013.dcm）
