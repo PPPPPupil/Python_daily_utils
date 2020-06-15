@@ -30,6 +30,8 @@ def CT_dicom2voxel(case_path, clip=False, minHu=-80, maxHu=300):
         # 截断Hu
         if clip == True:
             Hu = np.clip(Hu, minHu, maxHu)
+
+        # 注意这个地方要保证读入的切片和排序切片的顺序一致性（如1之后是10，需要对数字进行排序，1之后成为2）
         Hu_voxel.append(Hu)
     Hu_voxel = np.array(Hu_voxel)
     return Hu_voxel
